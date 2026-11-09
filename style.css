@@ -2756,3 +2756,786 @@ h1, h2, h3 {
     background: linear-gradient(90deg, transparent, var(--tech-green), transparent);
 }
 
+/* ==================================================================
+   MULTIPLAYER 5-PLAYER ARENA & LOBBY STYLES
+   ================================================================== */
+
+/* Tabs trong Modal Tạo / Vào Phòng */
+.lobby-tabs {
+    display: flex;
+    gap: 8px;
+    margin: 14px 0 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+}
+
+.tab-btn {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #94a3b8;
+    font-family: var(--font-heading);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    background: rgba(0, 255, 136, 0.08);
+    color: #e2e8f0;
+    border-color: rgba(0, 255, 136, 0.3);
+}
+
+.tab-btn.active {
+    background: rgba(0, 255, 136, 0.15);
+    color: var(--tech-green);
+    border-color: var(--tech-green);
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.25);
+}
+
+/* Trạng thái kết nối vào phòng */
+.join-status-box {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 12.5px;
+    color: #cbd5e1;
+    text-align: center;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tag người chơi / AI trong danh sách */
+.pill-bot-tag {
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 600;
+    margin-left: 2px;
+}
+
+.pill-live-tag {
+    color: var(--tech-green);
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 2px;
+    animation: pulse-live 1.6s infinite ease-in-out;
+}
+
+@keyframes pulse-live {
+    0%, 100% { opacity: 1; text-shadow: 0 0 6px rgba(0, 255, 136, 0.8); }
+    50% { opacity: 0.45; text-shadow: none; }
+}
+
+/* THẺ BÀI ĐỐI THỦ THƯƠNG TRƯỜNG (COMPETITOR CARD) */
+.competitor-card {
+    border-color: rgba(0, 229, 255, 0.35) !important;
+    background: linear-gradient(175deg, rgba(10, 20, 35, 0.85) 0%, rgba(6, 12, 22, 0.95) 100%) !important;
+}
+
+.competitor-card:hover {
+    border-color: #00e5ff !important;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.35) !important;
+}
+
+.competitor-card.is-target-locked {
+    border-color: var(--tech-green) !important;
+    box-shadow: 0 0 24px var(--green-glow) !important;
+}
+
+/* Avatar và Rank Badge của Đối thủ */
+.competitor-avatar-badge-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.12) 0%, transparent 70%);
+}
+
+.competitor-avatar-badge {
+    font-size: 52px;
+    line-height: 1;
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.5));
+    transition: transform 0.25s ease;
+}
+
+.competitor-card:hover .competitor-avatar-badge {
+    transform: scale(1.1);
+}
+
+.competitor-rank-pill {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    color: #00e5ff;
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* Thanh Khiên Thị trường Đối thủ */
+.competitor-hp-box {
+    width: 100%;
+    margin: 5px 0 6px;
+}
+
+.competitor-hp-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-bottom: 3px;
+    letter-spacing: 0.5px;
+}
+
+.competitor-hp-text {
+    color: #00e5ff;
+    font-family: var(--font-mono, monospace);
+    font-weight: 800;
+    font-size: 10.5px;
+}
+
+.shield-track {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.shield-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00b4d8, #00e5ff);
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+    border-radius: 4px;
+    transition: width 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s ease;
+}
+
+.shield-fill.warn {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+}
+
+.shield-fill.danger {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+/* Điểm & Streak trên Thẻ bài Đối thủ */
+.score-pill {
+    background: rgba(255, 215, 0, 0.12) !important;
+    border-color: rgba(255, 215, 0, 0.4) !important;
+    color: #ffd700 !important;
+    font-size: 10.5px !important;
+}
+
+.streak-pill {
+    background: rgba(255, 87, 34, 0.12) !important;
+    border-color: rgba(255, 87, 34, 0.4) !important;
+    color: #ff7043 !important;
+    font-size: 10.5px !important;
+}
+
+/* Banner Thông báo Đang trong Phòng Chờ */
+.waiting-indicator-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    border-radius: 8px;
+    color: #00e5ff;
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    background: #00e5ff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00e5ff;
+    animation: pulse-live 1.2s infinite ease-in-out;
+}
+
+/* ==================================================================
+   BỐ CỤC ĐẤU TRƯỜNG NGÔI SAO 5 CÁNH (5-PLAYER STAR FORMATION ARENA)
+   ================================================================== */
+
+.star-formation-arena {
+    padding: 6px 10px 4px !important;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Huy hiệu Đấu trường tinh gọn trên cùng */
+.star-arena-top-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 auto 4px auto;
+    padding: 3px 12px;
+    background: rgba(3, 14, 9, 0.85);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 20px;
+    font-family: var(--font-heading);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: #00ff88;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+/* Sân khấu Ngôi Sao 5 Cánh thoáng đãng */
+.star-formation-stage {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    margin: 2px auto 4px;
+    overflow: visible;
+}
+
+/* Lưới Dây Laser & Tia Hướng Tâm SVG */
+.star-pentagram-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.star-radial-beam {
+    stroke: rgba(0, 229, 255, 0.22);
+    stroke-width: 1.2;
+    stroke-dasharray: 4, 4;
+    animation: beam-flow 12s linear infinite;
+}
+
+.star-pentagon-perimeter {
+    fill: rgba(0, 229, 255, 0.015);
+    stroke: rgba(0, 255, 136, 0.2);
+    stroke-width: 1.2;
+    stroke-dasharray: 6, 4;
+    filter: drop-shadow(0 0 6px rgba(0, 255, 136, 0.3));
+}
+
+@keyframes beam-flow {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -100; }
+}
+
+/* Lõi Thị Trường Trung Tâm Tinh Gọn (Aegis Market Core) */
+.market-star-core {
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.core-outer-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1.2px dashed rgba(0, 229, 255, 0.4);
+    border-radius: 50%;
+    animation: spin-slow 16s linear infinite;
+}
+
+.core-inner-glow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.35) 0%, rgba(0, 229, 255, 0.12) 65%, transparent 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 14px rgba(0, 255, 136, 0.5);
+}
+
+.core-pulse-orb {
+    font-size: 16px;
+    line-height: 1;
+    animation: pulse-core 2s infinite ease-in-out;
+}
+
+.core-title-text {
+    font-family: var(--font-heading);
+    font-size: 7px;
+    font-weight: 800;
+    color: #00e5ff;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 6px rgba(0, 229, 255, 0.8);
+    margin-top: 2px;
+    white-space: nowrap;
+}
+
+@keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-core {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 6px #00ff88); }
+    50% { transform: scale(1.12); filter: drop-shadow(0 0 12px #00e5ff); }
+}
+
+/* Định vị 5 Combat Pods trên 5 Đỉnh Ngôi Sao */
+.star-card {
+    position: absolute;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    width: 104px;
+    padding: 6px 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    background: rgba(5, 20, 14, 0.88);
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.star-card:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    z-index: 25;
+    box-shadow: 0 6px 20px rgba(0, 229, 255, 0.35);
+    border-color: rgba(0, 229, 255, 0.6);
+}
+
+.star-card.is-target-locked {
+    border-color: #00ff88 !important;
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.5), inset 0 0 8px rgba(0, 255, 136, 0.2) !important;
+}
+
+.star-card.is-destroyed {
+    opacity: 0.45;
+    filter: grayscale(0.85);
+    pointer-events: none;
+    border-color: #ef4444 !important;
+}
+
+/* Khung Avatar Hình Tròn Hologram Pod */
+.pod-avatar-ring {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, rgba(2, 10, 6, 0.85) 75%);
+    border: 1.5px solid rgba(0, 229, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
+}
+
+.pod-avatar-icon {
+    font-size: 22px;
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.pod-rank-badge {
+    position: absolute;
+    bottom: -3px;
+    right: -4px;
+    background: #0b1928;
+    border: 1px solid rgba(0, 229, 255, 0.6);
+    color: #00e5ff;
+    font-size: 8px;
+    font-weight: 800;
+    padding: 0 4px;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+}
+
+.pod-crown-badge {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #14532d;
+    border: 1px solid var(--tech-green);
+    color: #4ade80;
+    font-size: 7.5px;
+    font-weight: 800;
+    padding: 0 5px;
+    border-radius: 8px;
+    white-space: nowrap;
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+}
+
+.pod-dead-badge {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(185, 28, 28, 0.85);
+    color: #fee2e2;
+    font-size: 7.5px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Thẻ của BẠN (Hero Star Card) */
+.hero-star-card {
+    width: 112px;
+    border-color: var(--tech-green) !important;
+    background: linear-gradient(175deg, rgba(6, 32, 20, 0.92) 0%, rgba(2, 16, 10, 0.98) 100%) !important;
+    box-shadow: 0 0 16px rgba(0, 255, 136, 0.28);
+}
+
+.hero-star-card:hover {
+    box-shadow: 0 0 24px rgba(0, 255, 136, 0.5) !important;
+}
+
+.hero-ring {
+    border-color: var(--tech-green) !important;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.22) 0%, rgba(2, 16, 10, 0.85) 75%) !important;
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.4) !important;
+}
+
+.hero-star-card .pod-name-text {
+    color: #a7f3d0 !important;
+    font-weight: 800 !important;
+}
+
+.hero-shield-fill {
+    background: linear-gradient(90deg, #00b4d8, #00ff88) !important;
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.6) !important;
+}
+
+/* Bảng thông tin chỉ số Pod */
+.pod-info-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.pod-name-text {
+    font-family: var(--font-heading);
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #f1f5f9;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 92px;
+}
+
+.pod-hp-track {
+    width: 100%;
+    height: 4.5px;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pod-meta-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 7.5px;
+    color: #94a3b8;
+    margin-top: 1px;
+}
+
+.pod-hp-val {
+    color: #38bdf8;
+    font-weight: 700;
+}
+
+.pod-score-val {
+    color: #facc15;
+    font-weight: 700;
+}
+
+/* Tọa độ 5 đỉnh ngôi sao đối xứng */
+.star-node-0 {
+    left: 50%;
+    top: 82%;
+}
+
+.star-node-1 {
+    left: 16%;
+    top: 56%;
+}
+
+.star-node-2 {
+    left: 26%;
+    top: 20%;
+}
+
+.star-node-3 {
+    left: 74%;
+    top: 20%;
+}
+
+.star-node-4 {
+    left: 84%;
+    top: 56%;
+}
+
+/* Đạn đỏ của Đối thủ khi bắn trả qua ngôi sao */
+.plasma-projectile-bolt.rival-red-bolt {
+    background: linear-gradient(90deg, #ff3366, #ffb703) !important;
+    box-shadow: 0 0 12px #ff3366, 0 0 24px #ffb703 !important;
+}
+
+/* Bảng nhắc chiến thuật */
+.arena-footer-tip {
+    text-align: center;
+    font-size: 10px;
+    color: #94a3b8;
+    background: rgba(3, 14, 9, 0.7);
+    border-radius: 8px;
+    padding: 4px 10px;
+    border: 1px dashed rgba(0, 255, 136, 0.2);
+    margin-top: 4px;
+}
+
+/* ==================================================================
+   MOBILE UI OPTIMIZATION (HOÀN THIỆN GIAO DIỆN DI ĐỘNG)
+   ================================================================== */
+
+@media (max-width: 768px) {
+    .star-formation-stage {
+        height: 290px !important;
+    }
+
+    .star-card {
+        width: 88px !important;
+        padding: 5px 6px !important;
+    }
+
+    .hero-star-card {
+        width: 96px !important;
+    }
+
+    .pod-avatar-ring {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .pod-avatar-icon {
+        font-size: 19px !important;
+    }
+
+    .game-lower-deck {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+    .brief-panel, .play-panel {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+}
+
+@media (max-width: 520px) {
+    /* Header di động gọn gàng */
+    .app-header {
+        padding: 6px 10px !important;
+        gap: 6px !important;
+    }
+
+    .brand-mark {
+        font-size: 16px !important;
+    }
+
+    .brand-title {
+        font-size: 13px !important;
+    }
+
+    .btn-hud {
+        padding: 4px 7px !important;
+        font-size: 10px !important;
+    }
+
+    .btn-hud-label {
+        font-size: 9.5px !important;
+    }
+
+    /* Đấu trường Ngôi Sao trên màn hình điện thoại (360px - 480px) */
+    .star-formation-stage {
+        height: 260px !important;
+        margin: 2px auto !important;
+    }
+
+    .star-card {
+        width: 68px !important;
+        padding: 4px !important;
+        border-radius: 8px !important;
+    }
+
+    .hero-star-card {
+        width: 76px !important;
+    }
+
+    .pod-avatar-ring {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .pod-avatar-icon {
+        font-size: 16px !important;
+    }
+
+    .pod-rank-badge {
+        font-size: 7px !important;
+        padding: 0 3px !important;
+        bottom: -2px !important;
+        right: -3px !important;
+    }
+
+    .pod-crown-badge {
+        font-size: 6.5px !important;
+        top: -6px !important;
+        padding: 0 3px !important;
+    }
+
+    .pod-name-text {
+        font-size: 7.5px !important;
+        max-width: 62px !important;
+    }
+
+    .pod-hp-track {
+        height: 3.5px !important;
+    }
+
+    .pod-meta-row {
+        font-size: 6.5px !important;
+    }
+
+    .pod-hp-val, .pod-score-val {
+        font-size: 6.5px !important;
+    }
+
+    .market-star-core {
+        width: 46px !important;
+        height: 46px !important;
+        top: 48% !important;
+    }
+
+    .core-inner-glow {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .core-pulse-orb {
+        font-size: 12px !important;
+    }
+
+    .core-title-text {
+        font-size: 5.5px !important;
+    }
+
+    /* Tọa độ tối ưu cho màn hình hẹp */
+    .star-node-0 {
+        left: 50% !important;
+        top: 84% !important;
+    }
+
+    .star-node-1 {
+        left: 15% !important;
+        top: 56% !important;
+    }
+
+    .star-node-2 {
+        left: 23% !important;
+        top: 20% !important;
+    }
+
+    .star-node-3 {
+        left: 77% !important;
+        top: 20% !important;
+    }
+
+    .star-node-4 {
+        left: 85% !important;
+        top: 56% !important;
+    }
+
+    /* Nút câu hỏi & Tương tác cảm ứng di động */
+    .question-text {
+        font-size: 14px !important;
+        line-height: 1.45 !important;
+    }
+
+    .option-grid {
+        gap: 8px !important;
+    }
+
+    .option-btn {
+        padding: 11px 12px !important;
+        font-size: 13px !important;
+        min-height: 48px !important;
+    }
+
+    .choice-btn {
+        padding: 10px 12px !important;
+    }
+
+    .arena-footer-tip {
+        font-size: 9.5px !important;
+        padding: 3px 6px !important;
+    }
+
+    .brief-panel, .play-panel {
+        padding: 12px 14px !important;
+    }
+}
+
+
+
+
+
