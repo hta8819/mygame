@@ -50,9 +50,9 @@ const GAME_CONFIG = {
 /* ---------------------------------------------------------------- */
 
 const ACTS = [
-    { id: 'act-1', code: 'HỒI I',   name: 'KHO HÀNG (CARGO BAY)',       range: [1, 4],  note: 'Khoang hàng đổ nát · Unit-07 quét sạch Bọ Drone α–δ' },
-    { id: 'act-2', code: 'HỒI II',  name: 'LÒ PHẢN ỨNG (REACTOR CORE)', range: [5, 8],  note: 'Trái tim năng lượng · Chống chọi Quái Gai Brute X–Y' },
-    { id: 'act-3', code: 'HỒI III', name: 'CẦU TÀU (COMMAND BRIDGE)',   range: [9, 12], note: 'Quyết chiến Nữ Chúa · Khởi động Hải Đăng S.O.S' }
+    { id: 'act-1', code: 'HỒI I',   name: 'KHO HÀNG (CARGO BAY)',       range: [1, 4],  note: 'Vành đai khoang hàng · Unit-07 đánh lui hỏa lực đột kích của Chuỗi Trà Vương & Cartel Vành Đai' },
+    { id: 'act-2', code: 'HỒI II',  name: 'LÒ PHẢN ỨNG (REACTOR CORE)', range: [5, 8],  note: 'Lõi năng lượng cao áp · Bắn phá pháo tháp Phương Nam Agri & Tuần dương hạm Valkyrie' },
+    { id: 'act-3', code: 'HỒI III', name: 'CẦU TÀU (COMMAND BRIDGE)',   range: [9, 12], note: 'Đại chiến 5 tàu cướp phá · Vượt vòng vây hạm đội đầu não, kích hoạt Hải Đăng S.O.S' }
 ];
 
 /* ---------------------------------------------------------------- */
@@ -367,10 +367,10 @@ const CHAPTERS = [
         id: 1, act: 0, year: 2124, place: 'Aegis-7 · Kho Hàng Số 4', stage: 'Cạnh tranh sinh tồn',
         title: 'Khoang nhỏ sau vụ va chạm', scene: '🚀',
         situation: [
-            'Phi thuyền vận tải Aegis-7 chấn động dữ dội sau cú rơi khẩn cấp xuống hành tinh hoang phế ngoài rìa Ngân Hà. Tại Kho Hàng Số 4, trạm dự phòng Trà Mộc rộng mười hai mét vuông là phân khu duy nhất duy trì được hệ thống tái tạo sinh khối và dưỡng khí tự động. Bạn và Robot Bảo An UNIT-07 đang kiểm tra thiệt hại thì cảm biến réo vang: bầy Bọ Drone α ngoài hành tinh bắt đầu cào xé vách khoang hàng!',
-            'Ngay lúc đó, phân đội tiếp tế của Chuỗi Trà Vương — đối thủ lớn nhất trong Vành đai — bật tín hiệu hologram khắp hành lang kho hàng: tuyên bố giảm giá 50% khẩu phần năng lượng sinh khối để lôi kéo toàn bộ nhân sự sống sót về phía họ.'
+            'Phi thuyền vận tải Aegis-7 chấn động dữ dội sau cú rơi khẩn cấp xuống hành tinh hoang phế ngoài rìa Ngân Hà. Tại Kho Hàng Số 4, trạm dự phòng Trà Mộc rộng mười hai mét vuông là phân khu duy nhất duy trì được hệ thống tái tạo sinh khối và dưỡng khí tự động. Bạn và Robot Bảo An UNIT-07 đang kiểm tra thiệt hại thì cảm biến réo vang: đội tàu săn hàng cướp phá của Cartel Vành Đai phóng ngư lôi plasma oanh tạc vách ngoài khoang hàng để cướp bóc các container trà quý!',
+            'Ngay lúc đó, phân đội tiếp tế vũ trang của Chuỗi Trà Vương — đối thủ lớn nhất trong Vành đai — bật tín hiệu hologram khắp hành lang kho hàng: vừa dùng pháo laser đe dọa, vừa tuyên bố giảm giá 50% khẩu phần năng lượng sinh khối để lôi kéo toàn bộ nhân sự sống sót về phía họ.'
         ],
-        dialogue: { speaker: 'Quản đốc khoang tàu', text: 'Trà Vương trả gấp đôi tín dụng để độc chiếm nguồn năng lượng kho hàng này. Cậu tính sao? Không thì tôi mở cổng cho họ tiếp quản cả dãy.' },
+        dialogue: { speaker: 'Quản đốc khoang tàu', text: 'Trà Vương trả gấp đôi tín dụng để ép ta nộp khoang hàng, còn tàu Cartel đang lăm le nã pháo cướp sạch. Cậu tính sao? Không thì tôi mở cổng cho họ tiếp quản cả dãy.' },
         question: {
             prompt: "Các ý nào dưới đây không đúng?",
             options: [
@@ -410,8 +410,8 @@ const CHAPTERS = [
         id: 2, act: 0, year: 2125, place: 'Aegis-7 · Trạm Cung Ứng Lục Nguyên', stage: 'Chuỗi cung ứng',
         title: 'Lá Mộc và cái giá độc quyền', scene: '🌱',
         situation: [
-            'Để duy trì hệ thống lọc khí cho các khoang trú ẩn, bạn cần nguồn lá Mộc thủy canh tinh khiết. Đúng lúc Bọ Drone β bắt đầu xâm nhập ống thông khí, Tập đoàn Phương Nam Agri — đơn vị kiểm soát gần 80% module thủy canh Lục Nguyên trên quỹ đạo — phát thông điệp độc quyền: họ tăng giá nguyên liệu thêm 35%, kèm hợp đồng trói buộc ba năm.',
-            'Nếu từ chối ký, kho trữ màng sinh học của bạn sẽ cạn sạch trong hai tuần, đe dọa sinh mạng hàng trăm người trong khoang. Nếu ký, toàn bộ công thức tinh chế và sự tự chủ của bạn sẽ nằm trong tay họ.'
+            'Để duy trì hệ thống lọc khí cho các khoang trú ẩn, bạn cần nguồn lá Mộc thủy canh tinh khiết. Đúng lúc tuần dương hạm vũ trang Phương Nam Agri khóa mục tiêu pháo laser vào khoang thủy canh mạn sườn, Tập đoàn này — đơn vị kiểm soát gần 80% module thủy canh Lục Nguyên trên quỹ đạo — phát thông điệp áp đặt độc quyền: họ tăng giá nguyên liệu thêm 35%, kèm hợp đồng trói buộc ba năm.',
+            'Nếu từ chối ký, tàu chiến của họ sẽ phong tỏa tuyến tiếp tế và kho trữ màng sinh học của bạn sẽ cạn sạch trong hai tuần. Nếu ký, toàn bộ công thức tinh chế và sự tự chủ của bạn sẽ rơi vào tay họ.'
         ],
         dialogue: { speaker: 'Giám đốc Phương Nam Agri', text: 'Aegis-7 là đối tác tiêu thụ lớn của chúng tôi. Tôi không muốn trạm nào khác chen vào. Hợp đồng độc quyền này là cách tốt nhất cho cả hai.' },
         question: {
@@ -453,8 +453,8 @@ const CHAPTERS = [
         id: 3, act: 0, year: 2126, place: 'Aegis-7 · Trung Tâm Hậu Cần Kho Hàng', stage: 'Thương vụ sáp nhập',
         title: 'Lời đề nghị từ Trà Vương', scene: '🛰️',
         situation: [
-            'Trà Mộc đã khôi phục được mười hai trạm sinh khối nhỏ khắp phân khu Kho Hàng và sở hữu lượng người dùng trung thành. Giữa lúc Bọ Drone γ gầm rú xé toạc các vách ngăn phía đông, CEO của Chuỗi Trà Vương triệu tập bạn lên khoang trung chuyển hậu cần, đặt lên bàn một tập hồ sơ số mã hóa.',
-            'Lời đề nghị thâu tóm: họ trả giá cao để mua lại 70% cổ phần Trà Mộc, bạn giữ vị trí Giám đốc điều hành trong 3 năm. Bạn có thể rút lui an toàn với khối tài sản khổng lồ, hoặc họ sẽ mở module bao vây mọi khoang của bạn cho đến khi bạn kiệt quệ.'
+            'Trà Mộc đã khôi phục được mười hai trạm sinh khối nhỏ khắp phân khu Kho Hàng và sở hữu lượng người dùng trung thành. Giữa lúc chiến hạm của Chuỗi Trà Vương nã pháo điện từ ép rách vách ngăn mạn đông nhằm chiếm đoạt kho trà Mộc, CEO của Chuỗi Trà Vương triệu tập bạn qua liên lạc vệ tinh quân sự, đặt lên bàn một tập hồ sơ số mã hóa.',
+            'Lời đề nghị thâu tóm: họ trả giá cao để mua lại 70% cổ phần Trà Mộc, bạn giữ vị trí Giám đốc điều hành trong 3 năm. Bạn có thể quy phục để tránh bom đạn, hoặc hạm đội của họ sẽ bắn nát mọi trạm sinh khối cho đến khi bạn kiệt quệ.'
         ],
         dialogue: { speaker: 'CEO Trà Vương', text: 'Cô đang thắng ở một khoang tàu nhỏ. Tôi đang mời cô làm chủ thị trường toàn Vành Đai. Đừng để cái tôi cá nhân tiêu diệt con tàu này.' },
         question: {
@@ -498,7 +498,7 @@ const CHAPTERS = [
         title: 'Cuộc chiến một tín dụng năng lượng', scene: '🏷️',
         situation: [
             'Một tổ chức thương mại mới mang tên “Trà 24/7” bất ngờ mở mười ki-ốt dã chiến ngay cửa hầm thoát hiểm, bán khẩu phần sinh khối với giá chỉ 19 tín dụng (cr) trong khi chi phí tái tạo tối thiểu đã là 22 cr. Khách xếp hàng dài dằng dặc, doanh thu trạm Trà Mộc sụt giảm 18% chỉ sau hai tuần.',
-            'Cùng lúc đó, Bọ Drone δ — con bọ trinh sát cuối cùng của Khoang Hàng — đang điên cuồng cắn phá dây cáp điện. Kế toán trưởng đặt trước mặt bạn hai bản kế hoạch: cắt giảm bảo trì chịu lỗ, hoặc dốc cạn vốn liếng để mở chiến dịch đối đầu trực diện.'
+            'Cùng lúc đó, phi thuyền đột kích trinh sát của phe đối thủ đang bắn phá hệ thống truyền dẫn năng lượng của khoang hàng nhằm dập tắt điện lưới trạm Trà Mộc. Kế toán trưởng đặt trước mặt bạn hai bản kế hoạch: cắt giảm bảo trì chịu lỗ, hoặc dốc cạn vốn liếng để mở chiến dịch đối đầu trực diện.'
         ],
         dialogue: { speaker: 'Quản lý khoang hàng', text: 'Những người sống sót đang hoảng loạn, họ không quan tâm ai bền vững hơn. Họ chỉ nhìn vào con số trên bảng giá.' },
         question: {
@@ -542,7 +542,7 @@ const CHAPTERS = [
         title: 'Bản tin báo động lúc sáu giờ', scene: '📰',
         situation: [
             'Unit-07 quét sạch Kho Hàng và hộ tống bạn tiến vào Khoang Lò Phản Ứng Năng Lượng (Reactor Core). Đúng sáu giờ sáng theo giờ trạm, mạng truyền thông Vành Đai Ký Sự phát phóng sự điều tra chấn động: “Trà Mộc và những hợp đồng độc quyền bóp nghẹt chuỗi cung ứng thủy canh giữa thảm họa Aegis-7”.',
-            'Bên ngoài hành lang lò phản ứng, tiếng gầm của quái vật Swarmer A dội qua vách kim loại nung đỏ. Thiết bị liên lạc của bạn nổ tung bởi hàng loạt tin nhắn chất vấn từ phi hành đoàn và các nhà đầu tư. Niềm tin sụp đổ có thể khiến con tàu hỗn loạn trước khi quái vật kịp phá hủy lõi lò.'
+            'Bên ngoài hành lang lò phản ứng, tiếng rít của pháo cao tần từ chiến hạm Nova-Valkyrie dội qua vách kim loại nung đỏ. Thiết bị liên lạc của bạn nổ tung bởi hàng loạt tin nhắn chất vấn từ phi hành đoàn và các nhà đầu tư. Niềm tin sụp đổ có thể khiến con tàu hỗn loạn trước khi hỏa lực đối phương kịp đánh sập khiên chắn lõi lò.'
         ],
         dialogue: { speaker: 'Trưởng phòng truyền thông', text: 'Chúng ta có ba lựa chọn: công khai minh bạch sự thật, dùng tiền bịt miệng truyền thông, hoặc phản đòn tờ báo. Quyết định đi, nhưng mọi vết tích số đều không thể xóa bỏ.' },
         question: {
@@ -585,7 +585,7 @@ const CHAPTERS = [
         id: 6, act: 1, year: 2128, place: 'Aegis-7 · Phân Khu Năng Lượng Trung Tâm', stage: 'Độc quyền Nhà nước',
         title: 'Cánh cửa mở từ Hội đồng Liên bang', scene: '🏛️',
         situation: [
-            'Lò phản ứng năng lượng đạt mức nhiệt tới hạn. Giữa tiếng súng Plasma của Unit-07 bắn chặn quái vật Swarmer B đang toan cắt đứt ống làm mát, phái đoàn đặc nhiệm của Hội đồng Quản trị Liên bang Vành đai bước vào phân khu trung tâm.',
+            'Lò phản ứng năng lượng đạt mức nhiệt tới hạn. Giữa tiếng súng Plasma của Unit-07 bắn chặn các phi thuyền đột kích của hạm đội Trà Vương đang toan bắn thủng đường ống làm mát, phái đoàn đặc nhiệm của Hội đồng Quản trị Liên bang Vành đai bước vào phân khu trung tâm.',
             'Hội đồng đưa ra đề xuất mang tính độc quyền nhà nước: họ muốn quốc hữu hóa và chỉ định Trà Mộc là nhà cung ứng sinh khối và năng lượng độc quyền duy nhất cho toàn bộ hệ thống cứu sinh, đổi lại bạn phải chấp nhận giá trần và chịu sự kiểm soát tuyệt đối của chính quyền.'
         ],
         dialogue: { speaker: 'Vị đại diện Hội đồng', text: 'Chúng tôi không cần cô lớn nhanh. Chúng tôi cần sự ổn định tuyệt đối. Hội đồng chịu trách nhiệm về mạng sống của hàng triệu công dân ngoài vành đai, cô hiểu chứ?' },
@@ -629,7 +629,7 @@ const CHAPTERS = [
         id: 7, act: 1, year: 2128, place: 'Aegis-7 · Xưởng Kỹ Thuật Động Cơ Lò', stage: 'Trách nhiệm lao động',
         title: 'Tiếng còi trước cổng xưởng máy', scene: '📢',
         situation: [
-            'Nhiệt độ trong khoang động cơ tăng vọt. Quái vật giáp gai khổng lồ — Quái Gai Brute X — đang dùng móng vuốt bọc giáp đập mạnh vào cánh cửa thép xưởng máy. Đúng lúc này, còi báo động vang lên: toàn bộ kỹ sư bảo trì và thợ máy nghiệp đoàn đình công!',
+            'Nhiệt độ trong khoang động cơ tăng vọt. Chiến hạm thiết giáp hạng nặng của Cartel Vành Đai đang nã đạn xuyên giáp hạng nặng phá hủy cánh cửa thép xưởng máy nhằm cướp đoạt lõi năng lượng. Đúng lúc này, còi báo động vang lên: toàn bộ kỹ sư bảo trì và thợ máy nghiệp đoàn đình công!',
             'Họ từ chối vận hành hệ thống bơm làm mát trừ khi công ty tăng 30% khẩu phần sinh khối, cải thiện đồ bảo hộ phóng xạ và trích lập quỹ an toàn lao động. Trà Mộc đang đứng trước nguy cơ lò phản ứng nổ tung nếu không giải quyết thỏa đáng cuộc đình công này.'
         ],
         dialogue: { speaker: 'Đại diện nghiệp đoàn', text: 'Chúng tôi không đòi công ty nhỏ lại. Chúng tôi chỉ muốn phần lớn lên đó cũng đến được với người làm ra nó.' },
@@ -649,7 +649,7 @@ const CHAPTERS = [
                 title: 'Chấp nhận toàn bộ yêu cầu',
                 desc: 'Tăng lương, cải thiện điều kiện làm việc ngay.',
                 deltas: { capital: -10, share: 0, reputation: 7, trust: 8, gov: 3, legal: -3 },
-                outcome: 'Bạn ký chấp thuận toàn bộ yêu sách của nghiệp đoàn. Chi phí vận hành tăng vọt, nhưng đội ngũ kỹ sư đồng lòng dốc sức sửa chữa máy bơm làm mát, giúp Unit-07 hạ gục Quái Gai Brute X trong gang tấc.',
+                outcome: 'Bạn ký chấp thuận toàn bộ yêu sách của nghiệp đoàn. Chi phí vận hành tăng vọt, nhưng đội ngũ kỹ sư đồng lòng dốc sức sửa chữa máy bơm làm mát, giúp Unit-07 bắn cháy pháo tháp và đẩy lùi thiết giáp hạm đối phương trong gang tấc.',
                 card: 'trach-nhiem'
             },
             {
@@ -672,7 +672,7 @@ const CHAPTERS = [
         id: 8, act: 1, year: 2129, place: 'Aegis-7 · Cổng Mạng Lưới Điều Phối Lò', stage: 'Độc quyền nền tảng',
         title: 'Nền tảng của ai?', scene: '🖥️',
         situation: [
-            'Hệ thống điều phối sinh khối số “Mộc OS” của bạn đã trở thành nền tảng hạ tầng phân phối năng lượng lớn nhất khắp các khoang tàu. Tuy nhiên, Quái Gai Brute Y — quái vật bọc giáp cuối cùng của Lò Phản Ứng — đang phun acid ăn mòn các cụm máy chủ trung tâm.',
+            'Hệ thống điều phối sinh khối số “Mộc OS” của bạn đã trở thành nền tảng hạ tầng phân phối năng lượng lớn nhất khắp các khoang tàu. Tuy nhiên, tuần dương hạm vũ trang Phương Nam Agri đang phóng xung điện từ cực mạnh làm tê liệt các cụm máy chủ trung tâm của trạm Trà Mộc nhằm bẻ gãy hệ thống phân phối độc quyền.',
             'Đồng thời, hàng loạt chủ quầy sinh khối độc lập nhỏ (như Hạt Mầm) gửi đơn khiếu nại khẩn cấp: thuật toán của Mộc OS đang bí mật ưu tiên hiển thị và phân bổ tài nguyên cho các gian hàng chính chủ của Trà Mộc, đẩy các đối tác nhỏ vào nguy cơ phá sản vì phí nền tảng cắt cổ.'
         ],
         dialogue: { speaker: 'Chủ quầy Hạt Mầm', text: 'Tôi trả phí để được bán. Nhưng cái cửa cô mở ra lại chỉ dẫn khách về phía cô.' },
@@ -716,7 +716,7 @@ const CHAPTERS = [
         id: 9, act: 2, year: 2129, place: 'Aegis-7 · Khoang VIP Cầu Tàu', stage: 'Bẫy Cartel cấu kết',
         title: 'Bữa tối ở phòng mật đàm', scene: '🥂',
         situation: [
-            'Unit-07 vượt qua cánh cửa chống nén cuối cùng để đưa bạn tiến vào Cầu Tàu Chỉ Huy (Command Bridge). Nhưng trước sảnh VIP dẫn tới bàn điều khiển chính, Vệ Binh Hoàng Gia của loài Xenomorph đang lượn lờ đe dọa. Bên trong phòng mật đàm bọc thép cách âm, lãnh đạo của ba tập đoàn lớn nhất đang ngồi đợi bạn.',
+            'Unit-07 kích hoạt khiên năng lượng tối đa, vượt qua cánh cửa chống nén cuối cùng để đưa bạn tiến vào Cầu Tàu Chỉ Huy (Command Bridge). Nhưng ngoài không gian quanh cầu tàu, các chiến hạm tuần tra hạng nặng của liên minh đối thủ đang dàn đội hình bao vây chĩa tên lửa đe dọa. Bên trong phòng mật đàm bọc thép, lãnh đạo của ba tập đoàn lớn nhất đang ngồi đợi bạn.',
             'Họ đặt vấn đề thành lập một Cartel ngầm: bí mật thỏa thuận phân chia khu vực ảnh hưởng, cố định giá năng lượng ở mức cao ngất ngưởng và cùng nhau triệt tiêu mọi startup sinh khối mới xuất hiện sau khi con tàu được giải cứu.'
         ],
         dialogue: { speaker: 'CEO một chuỗi đối thủ', text: 'Không ai thiệt cả. Chỉ là ba người lớn ngồi lại với nhau thôi.' },
@@ -760,7 +760,7 @@ const CHAPTERS = [
         id: 10, act: 2, year: 2130, place: 'Aegis-7 · Phòng Chỉ Huy An Ninh Cầu Tàu', stage: 'Luật Chống độc quyền',
         title: 'Cuộc điều tra từ Ủy ban Cạnh tranh', scene: '⚖️',
         situation: [
-            'Cánh cửa cầu tàu rung chuyển dữ dội! NỮ CHÚA XENOMORPH (Hive Queen Boss) với vương miện giáp xác khổng lồ xuất hiện trên màn hình radar, rít lên tiếng gầm kinh thiên động địa. Unit-07 khóa mục tiêu, nạp phát đạn Plasma Blaster đầu tiên vào khiên giáp Nữ Chúa.',
+            'Cánh cửa cầu tàu rung chuyển dữ dội! HẠM ĐỘI THIẾT GIÁP HẠM ĐẦU NÃO CỦA CÁC ĐỐI THỦ đã tập kết toàn lực lượng, đồng loạt kích hoạt pháo hủy diệt ion hướng thẳng vào cầu tàu Aegis-7. Unit-07 khóa mục tiêu, nạp loạt đạn Plasma Blaster xuyên giáp đánh chặn loạt oanh tạc đầu tiên.',
             'Đúng lúc dầu sôi lửa bỏng, kênh liên lạc tối mật từ Ủy ban Cạnh tranh Quốc gia và Thanh tra Liên bang kết nối thẳng vào bàn chỉ huy: họ mở cuộc điều tra chống độc quyền toàn diện đối với Trà Mộc do nghi vấn lạm dụng vị thế thống lĩnh thị trường và thỏa thuận hạn chế cạnh tranh.'
         ],
         dialogue: { speaker: 'Trưởng đoàn điều tra', text: 'Chúng tôi không tìm cách phá doanh nghiệp. Chúng tôi đang kiểm tra xem cạnh tranh còn thở được không.' },
@@ -804,7 +804,7 @@ const CHAPTERS = [
         id: 11, act: 2, year: 2130, place: 'Aegis-7 · Đài Quan Sát Cầu Tàu', stage: 'Ngã rẽ Hiến chương',
         title: 'Lời mời từ Hội đồng Cạnh tranh', scene: '📜',
         situation: [
-            'Unit-07 tung phát đạn Plasma thứ hai xé toạc lớp giáp ngoài của Nữ Chúa. Nữ Chúa lồng lộn quẫy đuôi làm sập các trụ đỡ quanh đài quan sát Cầu Tàu. Giữa làn khói đạn nghi ngút, đại diện cấp cao của Hội đồng Cạnh tranh xuất hiện trên màn hình toàn cảnh.',
+            'Unit-07 tung loạt pháo Plasma bắn nổ dàn tên lửa của soái hạm đối phương, bẻ gãy đợt tổng tấn công quanh đài quan sát Cầu Tàu. Giữa làn khói đạn nghi ngút, đại diện cấp cao của Hội đồng Cạnh tranh xuất hiện trên màn hình toàn cảnh.',
             'Họ đưa ra một ngã rẽ lịch sử: Bạn có thể chọn tiếp tục thâu tóm, nuốt trọn mọi đối thủ để trở thành độc tôn tuyệt đối; hoặc bạn có thể đóng vai trò kiến tạo, cùng ký kết Bản Hiến chương Thị trường Tự do để bảo vệ sân chơi chung cho toàn thể nhân loại sau khi thoát khỏi vùng thảm họa.'
         ],
         dialogue: { speaker: 'Vị đại diện Hội đồng', text: 'Cô có thể tiếp tục lớn cho đến khi có người chặn cô. Hoặc cô có thể giúp viết cái hàng rào mà sau này chính cô cũng muốn sống bên trong.' },
@@ -848,10 +848,10 @@ const CHAPTERS = [
         id: 12, act: 2, year: 2136, place: 'Aegis-7 · Bàn Điều Khiển Trung Tâm - Hải Đăng S.O.S', stage: 'Phán quyết tối hậu',
         title: 'Mười hai năm, một bản Hiến chương', scene: '🌟',
         situation: [
-            'Bằng phát đạn Plasma Blaster năng lượng tối thượng, Unit-07 bắn xuyên tim Nữ Chúa Xenomorph! Quái thú khổng lồ đổ gục xuống sàn đài chỉ huy, bầy quái vật còn lại tan tác tháo chạy vào không gian tối tăm. Bàn điều khiển trung tâm của phi thuyền Aegis-7 đã hoàn toàn được giải phóng.',
+            'Bằng loạt pháo Plasma Blaster năng lượng tối thượng, Unit-07 bắn tan giàn pháo chính của 4 chiến hạm đối thủ! Bị phá vỡ hoàn toàn khiên chắn, các hạm đội cướp phá buộc phải tháo chạy vào không gian sâu. Bàn điều khiển trung tâm của phi thuyền Aegis-7 đã hoàn toàn được giải phóng.',
             'Trước mắt bạn là khe cắm Thẻ Khóa Năng Lượng Hải Đăng S.O.S. Ngoài ô kính buồng lái, mười hai năm trôi qua trên hải trình Vành Đai, bạn nhìn lại những chặng đường đã qua: từ quầy sinh khối nhỏ bé mười hai mét vuông đến vận mệnh của cả một nền kinh tế. Giờ là lúc đưa ra phán quyết cuối cùng trước khi phóng tín hiệu cứu hộ lên dải Ngân Hà.'
         ],
-        dialogue: { speaker: 'Hệ thống AI Trung Tâm Aegis-7', text: 'Nữ Chúa đã bị tiêu diệt. Bàn điều khiển sẵn sàng. Xin hãy xác nhận triết lý vận hành cốt lõi trước khi kích hoạt Hải Đăng Cứu Hộ S.O.S.' },
+        dialogue: { speaker: 'Hệ thống AI Trung Tâm Aegis-7', text: 'Các hạm đội đối thủ đã bị đẩy lùi. Bàn điều khiển sẵn sàng. Xin hãy xác nhận triết lý vận hành cốt lõi trước khi kích hoạt Hải Đăng Cứu Hộ S.O.S.' },
         question: {
             prompt: "Cổ phiếu và trái phiếu là hình thức đầu tư. Chọn các ý đúng dưới đây:",
             options: [
@@ -1111,87 +1111,87 @@ const INTRO_SCENES = [
     },
     {
         id: 'intro-crash',
-        kicker: 'BIẾN CỐ · THIÊN THẠCH & DỊ VẬT',
-        title: 'Bão thiên thạch và cú rơi kinh hoàng',
-        desc: 'Bão thiên thạch không gian bất ngờ tập kích xé toạc các tấm chắn phản lực. Tàu rơi khẩn cấp xuống tinh cầu hoang phế ngoài rìa Ngân Hà. Vỏ tàu nứt toác, hương thơm trà quý rò rỉ thu hút bầy dị vật Xenomorph khát máu tràn vào cắn phá các khoang ủ trà!'
+        kicker: 'BIẾN CỐ · THIÊN THẠCH & 4 TÀU ĐỐI THỦ',
+        title: 'Bão thiên thạch và sự phục kích khốc liệt',
+        desc: 'Bão thiên thạch xé toạc các tấm chắn phản lực khiến tàu Aegis-7 rơi khẩn cấp xuống tinh cầu hoang phế. Vỏ tàu nứt toác, các container trà quý lộ ra thu hút 4 chiến hạm vũ trang của các tập đoàn đối thủ và hải tặc không gian ồ ạt kéo đến cướp phá!'
     },
     {
         id: 'intro-mission',
         kicker: 'MỤC TIÊU CHIẾN DỊCH',
         title: 'Robot Unit-07 nạp đạn Plasma bảo vệ kho trà',
-        desc: 'Mỗi câu hỏi tri thức giải mã chính xác sẽ nạp năng lượng Plasma Blaster cho Robot Unit-07 tiêu diệt quái vật. Hãy bảo vệ các khoang trà, vượt qua 3 khu vực và tiến tới Cầu Tàu phát tín hiệu cứu hộ S.O.S!'
+        desc: 'Mỗi câu hỏi tri thức giải mã chính xác sẽ nạp năng lượng Plasma Blaster cho Robot Unit-07 đánh trả và phá khiên 4 tàu đối thủ. Hãy bảo vệ các khoang trà, vượt qua hỏa lực bao vây và tiến tới Cầu Tàu phát tín hiệu cứu hộ S.O.S!'
     }
 ];
 
 /* ---------------------------------------------------------------- */
-/* 8. DỮ LIỆU ĐIỆN ẢNH & ĐẤU TRƯỜNG QUÁI VẬT                        */
+/* 8. DỮ LIỆU ĐIỆN ẢNH & ĐẤU TRƯỜNG 5 TÀU KHÔNG GIAN                */
 /* ---------------------------------------------------------------- */
 
 const AEGIS_STORY = {
     intro: {
-        title: "BÁO ĐỘNG ĐỎ: TÀU VẬN TẢI TRÀ MỘC BỊ TẬP KÍCH",
-        subtitle: "Hải trình giao thương của phi thuyền vận tải Aegis-7 thuộc Tập đoàn Trà Mộc",
+        title: "BÁO ĐỘNG ĐỎ: 5 TÀU CHIẾN GIAO TRANH KHẮC NGHIỆT",
+        subtitle: "Hải trình giao thương của phi thuyền vận tải Aegis-7 đối đầu 4 tàu cướp phá",
         scenes: [
             {
                 id: "scene-tea-cargo",
                 title: "HỒI I: HẢI TRÌNH GIAO THƯƠNG TRÀ MỘC LIÊN HÀNH TINH",
                 desc: "Năm 2124, phi thuyền vận tải chuyên dụng Aegis-7 của Tập đoàn Trà Mộc mang theo lô hàng chiến lược: hàng ngàn container trà Mộc Thủy Canh Thượng Hạng và tinh dầu trà sinh thái lượng tử trên hải trình giao thương với các trạm không gian Liên bang Vành đai.",
                 duration: 4500,
-                image: "assets/cinematic_meteor.jpg"
+                image: "assets/bg_bridge.jpg"
             },
             {
                 id: "scene-meteor-crash",
                 title: "HỒI II: BÃO THIÊN THẠCH & HẠ CÁNH KHẨN CẤP",
                 desc: "Bão thiên thạch không gian bất ngờ ập tới xé toạc các tấm chắn phản lực trọng trường. Con tàu bốc cháy dữ dội, chao đảo và lao thẳng xuống va chạm kinh hoàng trên một hành tinh hoang phế ngoài rìa Ngân Hà.",
                 duration: 4500,
-                image: "assets/cinematic_crash.jpg"
+                image: "assets/cinematic_meteor.jpg"
             },
             {
                 id: "scene-tea-breach",
-                title: "HỒI III: DỊ VẬT XENOMORPH ĐỘT KÍCH KHO TRÀ",
-                desc: "Lớp vỏ tàu nứt toác, các module ủ trà thủy canh chấn động vỡ vụn. Mùi hương thảo mộc nồng nàn và bức xạ sinh thái thoát ra đã kích thích khứu giác bầy dị vật Xenomorph khát máu. Chúng ồ ạt tràn vào cắn phá các khoang hàng trà quý!",
+                title: "HỒI III: 4 CHIẾN HẠM ĐỐI THỦ PHỤC KÍCH CƯỚP PHÁ",
+                desc: "Lớp vỏ tàu nứt toác, mùi hương thảo mộc nồng nàn rò rỉ. Ngay lập tức, 4 chiến hạm đối thủ gồm Chuỗi Trà Vương, Phương Nam Agri, Nova-Valkyrie và Cartel Vành Đai đồng loạt ập tới, khai hỏa pháo năng lượng để cướp bóc các container trà quý!",
                 duration: 4500,
-                image: "assets/cinematic_swarm.jpg"
+                image: "assets/cinematic_ships_raid.jpg"
             },
             {
                 id: "scene-robot-defense",
-                title: "HỒI IV: ROBOT UNIT-07 BẢO VỆ TINH HOA TRÀ MỘC",
-                desc: "Robot Bảo An UNIT-07 kích hoạt súng Plasma Blaster và khiên 200 HP. Hãy trả lời đúng các câu hỏi tri thức và đưa ra các quyết định chiến lược để nạp đạn Plasma, quét sạch dị vật, bảo vệ nguyên vẹn các mẫu trà Mộc và mở đường tới Cầu Tàu phát tín hiệu S.O.S!",
+                title: "HỒI IV: ROBOT UNIT-07 ĐẠI CHIẾN BẢO VỆ TINH HOA TRÀ MỘC",
+                desc: "Robot Bảo An UNIT-07 kích hoạt súng Plasma Blaster và khiên 200 HP. Hãy trả lời đúng các câu hỏi tri thức và đưa ra các quyết định chiến lược để nạp đạn Plasma, bắn phá khiên 4 chiến hạm đối thủ, bảo vệ nguyên vẹn các mẫu trà Mộc và phát tín hiệu S.O.S!",
                 duration: 5000,
                 image: "assets/robot_hero.jpg"
             }
         ]
     },
     transition1: {
-        title: "DỌN SẠCH KHO HÀNG TRÀ THỦY CANH (CARGO BAY)",
-        subtitle: "Vượt qua Hồi I: Khởi nghiệp · Tiến sâu vào Khoang Ủ Trà & Lò Phản Ứng",
+        title: "ĐẨY LÙI ĐỢT TẬP KÍCH KHO HÀNG (CARGO BAY)",
+        subtitle: "Vượt qua Hồi I: Khởi nghiệp · Tiến sâu vào Khoang Lò Phản Ứng",
         paragraphs: [
-            "Bầy bọ Swarm Drones cắn phá các container Trà Mộc đã bị quét sạch bởi hỏa lực Plasma kiên cường của Unit-07.",
+            "Hỏa lực pháo cướp phá của Chuỗi Trà Vương và Cartel Vành Đai đã bị Robot Unit-07 bắn rách khiên chắn và buộc phải rút lui tạm thời.",
             "Tại trạm, thương hiệu Trà Mộc đã vượt qua giai đoạn khởi nghiệp khốc liệt nhất, bảo toàn được các thùng nguyên liệu lá Mộc đầu tiên.",
-            "Tuy nhiên, cảm biến sinh học cảnh báo các cá thể bọc giáp gai — Xeno Brutes — đang cố gắng xâm nhập Lò phản ứng & Dây chuyền ủ nhiệt, nhằm phá hủy toàn bộ hệ sinh thái sản xuất trà độc quyền. Hãy nạp đạn và tiến lên bảo vệ dây chuyền!"
+            "Tuy nhiên, cảm biến cảnh báo hạm đội tuần dương hạm Phương Nam Agri và chiến hạm Nova-Valkyrie đang tập trung hỏa lực pháo kích thẳng vào Lò phản ứng & Buồng ủ nhiệt. Hãy nạp đạn và tiến lên bảo vệ nguồn năng lượng sống còn!"
         ],
-        buttonText: "TIẾN VÀO DÂY CHUYỀN Ủ TRÀ (HỒI II) ➔"
+        buttonText: "TIẾN VÀO LÒ PHẢN ỨNG (HỒI II) ➔"
     },
     transition2: {
-        title: "BẢO VỆ THÀNH CÔNG DÂY CHUYỀN Ủ NHIỆT",
-        subtitle: "Vượt qua Hồi II: Mở rộng · Cánh cửa dẫn tới Cầu Tàu & Kho Mẫu Trà Tổ",
+        title: "BẢO VỆ THÀNH CÔNG LÒ PHẢN ỨNG VÀ BUỒNG Ủ TRÀ",
+        subtitle: "Vượt qua Hồi II: Mở rộng · Cánh cửa dẫn tới Cầu Tàu Chỉ Huy",
         paragraphs: [
-            "Lũ dị vật giáp gai bốc cháy trước hỏa lực của Unit-07. Lò phản ứng và buồng ủ trà đã được cô lập an toàn.",
-            "Nhưng trước cửa Đài chỉ huy (Bridge) — nơi lưu giữ mẫu trà tổ hoàng gia và trạm phát sóng cứu hộ S.O.S, mặt sàn rung chuyển dữ dội... NỮ CHÚA XENOMORPH (HIVE QUEEN BOSS) khổng lồ, hiện thân của thế lực tàn phá tối thượng đang chực chờ nuốt chửng tất cả.",
-            "Đây là trận quyết chiến sinh tử để bảo vệ tinh hoa Trà Mộc, mở khóa bảng điều khiển và phát tín hiệu S.O.S triệu hồi hạm đội cứu viện!"
+            "Các đợt pháo kích của đối thủ bị vô hiệu hóa trước hỏa lực phòng thủ kiên cường của Unit-07. Lò phản ứng và buồng ủ trà đã được gia cố an toàn.",
+            "Nhưng trước cửa Đài chỉ huy (Bridge) — nơi phát sóng cứu hộ S.O.S, hạm đội thiết giáp hạm đầu não của 4 đối thủ đang dàn trận tổng lực nghênh chiến nhằm hủy diệt toàn bộ trạm Trà Mộc.",
+            "Đây là trận quyết chiến sinh tử giữa 5 tàu không gian để bảo vệ tinh hoa Trà Mộc, mở khóa bảng điều khiển và phát tín hiệu S.O.S triệu hồi hạm đội cứu viện!"
         ],
-        buttonText: "QUYẾT CHIẾN NỮ CHÚA BẢO VỆ TRÀ MỘC (HỒI III) ➔"
+        buttonText: "QUYẾT CHIẾN HẠM ĐỘI ĐỐI THỦ (HỒI III) ➔"
     },
     epilogue: {
         title: "TÍN HIỆU CỨU HỘ VƯƠN XA — BẢO VỆ TRỌN VẸN TRÀ MỘC",
-        subtitle: "Đánh bại Nữ Chúa · Kích hoạt Hải Đăng S.O.S Tập Đoàn Trà Mộc",
+        subtitle: "Bắn tan khiên 4 chiến hạm · Kích hoạt Hải Đăng S.O.S Tập Đoàn Trà Mộc",
         scenes: [
             {
-                id: "scene-queen-down",
-                title: "HỒI KẾT: NỮ CHÚA GỤC NGÃ — KHO MẪU TRÀ AN TOÀN",
-                desc: "Với phát đạn Plasma Blaster năng lượng hủy diệt cuối cùng, Nữ Chúa gầm lên rồi đổ sụp xuống mặt sàn. Khoang lưu trữ mẫu trà tổ và công nghệ ủ trà độc quyền của Tập đoàn Trà Mộc đã được bảo vệ toàn vẹn trước nanh vuốt quái vật!",
+                id: "scene-fleet-victory",
+                title: "HỒI KẾT: HẠM ĐỘI ĐỐI THỦ RÚT CHẠY — KHO TRÀ NGUYÊN VẸN",
+                desc: "Dưới làn đạn Plasma Blaster uy lực cùng khiên chắn sinh thái vững chắc, toàn bộ chiến hạm của các tập đoàn đối thủ bị phá hủy pháo tháp và khiên chắn, buộc phải rút lui khỏi quỹ đạo Aegis-7. Kho lưu trữ mẫu trà tổ và công nghệ độc quyền của Tập đoàn Trà Mộc được bảo vệ toàn vẹn!",
                 duration: 4500,
-                image: "assets/alien_queen.jpg"
+                image: "assets/cinematic_fleet_victory.jpg"
             },
             {
                 id: "scene-beacon",
@@ -1205,24 +1205,26 @@ const AEGIS_STORY = {
 };
 
 const SECTOR_MONSTERS = [
-    // Hồi I (Chương 1–4): Kho Hàng Trà - 4 Drones (1 HP mỗi con)
+    // Hồi I (Chương 1–4): Kho Hàng - 4 Tàu Đột Kích Vành Đai (200 HP)
     [
-        { id: 's1_drone1', name: 'Bọ Cắn Phá Trà α', type: 'small', hp: 1, maxHp: 1, image: 'assets/alien_small.jpg' },
-        { id: 's1_drone2', name: 'Bọ Cắn Phá Trà β', type: 'small', hp: 1, maxHp: 1, image: 'assets/alien_small.jpg' },
-        { id: 's1_drone3', name: 'Bọ Cắn Phá Trà γ', type: 'small', hp: 1, maxHp: 1, image: 'assets/alien_small.jpg' },
-        { id: 's1_drone4', name: 'Bọ Cắn Phá Trà δ', type: 'small', hp: 1, maxHp: 1, image: 'assets/alien_small.jpg' }
+        { id: 's1_ship1', name: 'Tàu Trinh Sát Trà Vương', type: 'rival', hp: 200, maxHp: 200, image: 'assets/bg_bridge.jpg', role: 'Tuần tra hạm Trà Vương' },
+        { id: 's1_ship2', name: 'Chiến Tàu Phương Nam', type: 'rival', hp: 200, maxHp: 200, image: 'assets/bg_cargobay.jpg', role: 'Chiến hạm Phương Nam Agri' },
+        { id: 's1_ship3', name: 'Phi Thuyền Valkyrie', type: 'rival', hp: 200, maxHp: 200, image: 'assets/bg_reactor.jpg', role: 'Tàu xung kích Valkyrie' },
+        { id: 's1_ship4', name: 'Tàu Cướp Phá Cartel', type: 'rival', hp: 200, maxHp: 200, image: 'assets/cinematic_ships_raid.jpg', role: 'Tàu cướp phá Vành Đai' }
     ],
-    // Hồi II (Chương 5–8): Lò Phản Ứng & Dây Chuyền Ủ Trà - 2 Drones (1 HP) + 2 Brutes bọc giáp (1 HP)
+    // Hồi II (Chương 5–8): Lò Phản Ứng - 4 Chiến Hạm Pháo Kích (200 HP)
     [
-        { id: 's2_drone1', name: 'Dị Vật Đột Kích A', type: 'small', hp: 1, maxHp: 1, image: 'assets/alien_small.jpg' },
-        { id: 's2_drone2', name: 'Dị Vật Đột Kích B', type: 'small', hp: 1, maxHp: 1, image: 'assets/alien_small.jpg' },
-        { id: 's2_brute1', name: 'Xeno Phá Dây Chuyền X', type: 'large', hp: 1, maxHp: 1, image: 'assets/alien_large.jpg' },
-        { id: 's2_brute2', name: 'Xeno Phá Dây Chuyền Y', type: 'large', hp: 1, maxHp: 1, image: 'assets/alien_large.jpg' }
+        { id: 's2_ship1', name: 'Tàu Trinh Sát Trà Vương', type: 'rival', hp: 200, maxHp: 200, image: 'assets/bg_bridge.jpg', role: 'Tuần tra hạm Trà Vương' },
+        { id: 's2_ship2', name: 'Chiến Tàu Phương Nam', type: 'rival', hp: 200, maxHp: 200, image: 'assets/bg_cargobay.jpg', role: 'Chiến hạm Phương Nam Agri' },
+        { id: 's2_ship3', name: 'Phi Thuyền Valkyrie', type: 'rival', hp: 200, maxHp: 200, image: 'assets/bg_reactor.jpg', role: 'Tàu xung kích Valkyrie' },
+        { id: 's2_ship4', name: 'Tàu Cướp Phá Cartel', type: 'rival', hp: 200, maxHp: 200, image: 'assets/cinematic_ships_raid.jpg', role: 'Tàu cướp phá Vành Đai' }
     ],
-    // Hồi III (Chương 9–12): Cầu Tàu & Kho Mẫu Trà Tổ - 1 Guard (1 HP) + Nữ Chúa Boss (3 HP) = 4 đòn bắn
+    // Hồi III (Chương 9–12): Cầu Tàu - 4 Thiết Giáp Hạm Đầu Não (200 HP)
     [
-        { id: 's3_guard', name: 'Vệ Binh Xenomorph', type: 'small', hp: 1, maxHp: 1, image: 'assets/alien_small.jpg' },
-        { id: 's3_queen', name: 'NỮ CHÚA XENOMORPH', type: 'queen', hp: 3, maxHp: 3, image: 'assets/alien_queen.jpg' }
+        { id: 's3_ship1', name: 'Tàu Trinh Sát Trà Vương', type: 'rival', hp: 200, maxHp: 200, image: 'assets/bg_bridge.jpg', role: 'Tuần tra hạm Trà Vương' },
+        { id: 's3_ship2', name: 'Chiến Tàu Phương Nam', type: 'rival', hp: 200, maxHp: 200, image: 'assets/bg_cargobay.jpg', role: 'Chiến hạm Phương Nam Agri' },
+        { id: 's3_ship3', name: 'Phi Thuyền Valkyrie', type: 'rival', hp: 200, maxHp: 200, image: 'assets/bg_reactor.jpg', role: 'Tàu xung kích Valkyrie' },
+        { id: 's3_ship4', name: 'Tàu Cướp Phá Cartel', type: 'rival', hp: 200, maxHp: 200, image: 'assets/cinematic_ships_raid.jpg', role: 'Tàu cướp phá Vành Đai' }
     ]
 ];
 
